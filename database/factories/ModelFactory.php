@@ -28,3 +28,10 @@ $factory->define(App\Car::class, function (Faker\Generator $faker) {
         'name' => $faker->name,
     ];
 });
+
+$factory->define(App\Contract::class, function (Faker\Generator $faker) {
+    return [
+        'car_id' => rand(1,5),
+        'name' => $faker->name,
+    ];
+});

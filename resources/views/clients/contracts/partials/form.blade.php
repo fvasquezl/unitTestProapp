@@ -1,0 +1,4 @@
+{!! Field::text('name') !!}
+
+
+

@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Client;
+namespace App\Http\Controllers\Admin;
 
-use App\Car;
-use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 
-class CarController extends Controller
+class ClientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,8 @@ class CarController extends Controller
      */
     public function index()
     {
-        $user = Auth()->user();
-        $cars = Car::where('user_id',$user->id)->paginate(10);
-        return view('clients.cars.index', compact('cars'));
+        $users = User::paginate(10);
+        return view('admin.clients.index',compact('users'));
     }
 
     /**
@@ -28,7 +26,7 @@ class CarController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -45,10 +43,10 @@ class CarController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Car  $car
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Car $car)
+    public function show(User $user)
     {
         //
     }
@@ -56,10 +54,10 @@ class CarController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Car  $car
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Car $car)
+    public function edit(User $user)
     {
         //
     }
@@ -68,10 +66,10 @@ class CarController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Car  $car
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Car $car)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -79,10 +77,10 @@ class CarController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Car  $car
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Car $car)
+    public function destroy(User $user)
     {
         //
     }
