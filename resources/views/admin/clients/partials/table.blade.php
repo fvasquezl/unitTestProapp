@@ -8,11 +8,11 @@
     </tr>
     </thead>
     <tbody>
-    @foreach($clients as $client)
-        <tr data-id="{{$client->id}}">
-            <td>{{ $client->id}}</td>
-            <td>{{ $client->name}}</td>
-            <td>{{ $client->email}}</td>
+    @foreach($users as $user)
+        <tr data-id="{{$user->id}}">
+            <td>{{ $user->id}}</td>
+            <td>{{ $user->name}}</td>
+            <td>{{ $user->email}}</td>
             <td>
                 @include('admin.clients.partials.buttons')
             </td>
@@ -20,4 +20,4 @@
     @endforeach
     </tbody>
 </table>
-{!! $clients->appends(Request::only(['search','role']))->links() !!}
+{!! $users->appends(Request::only(['search','role']))->links() !!}
